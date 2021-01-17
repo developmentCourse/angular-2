@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ejemplo2';
+  public userSubscribed : boolean =false;
+  subscriptionChanged(ev : any){
+    console.log('el usuario se inscribio');
+    this.userSubscribed = ev;
+  }
 }

@@ -1,0 +1,33 @@
+<h1>curso de angulitar</h1>
+<p *ngIf="!isAvailable; else available">Lanzamiento: {{launchDate | date:"dd MMM y h:mm:ss":"-0000"
+    | uppercase}}</p>
+<ng-template #available>
+    <samp class="highlight">Curso disponible</samp>
+</ng-template>
+<div class="categoty" [ngSwitch]="category">
+    <span *ngSwitchCase="'web'">Desarrollo Web</span>
+    <span *ngSwitchCase="'mobile'">Desarrollo movil</span>
+    <span *ngSwitchCase="'other'">Desarrollo general</span>
+    <samp *ngSwitchDefault> No especificado</samp>
+</div>
+<h3 [redBorder]= "'pink'" [redClass]="'pink-border'"> Tutor: {{name}}</h3>
+<div [@showUp] = "moreInformation" style="overflow: hidden;" >
+    <a (click)="toggleMoreInformation()">Más informacion <i class="fas" [ngClass]="{'fa-chevron-circle-down':!moreInformation,
+        'fa-chevron-circle-up' : moreInformation}"></i></a>
+
+    <p >
+        <span style="display: block; font-weight: bold;">{{seconds|secondsToTimeFormat : false}}</span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero culpa maiores
+         tenetur repellendus itaque quisquam nostrum laborum eveniet, et quae, 
+        ex unde cupiditate odit natus molestias excepturi. Voluptatibus, magni quaerat?
+    </p>
+</div>
+<ul>
+    <li *ngFor="let topic of topics; index as posicion">{{posicion +1}}.-{{topic}} </li>
+</ul>
+<div>
+    <button [disabled]="!isAvailable || !subscribed" [ngClass]="{active: isAvailable && subscribed, shadow:!isAvailable}" 
+    type="button" name="button">Inscribir {{price | currency:'BS '}}</button>
+</div>
+
+

@@ -1,0 +1,9 @@
+<h3>Mis repositorios</h3>
+<p>{{(articlesS.reposObserver | async)?.length}} repositorios</p>
+<div class="">
+    <p style="font-weight:bold; font-size:1.3em;">{{articlesS.mainRepo?.ejemplo()}}</p>
+</div>
+<ul [@staggeredShowUp]="(articlesS.reposObserver |async)?.length">
+    <li *ngFor="let repo of articlesS.reposObserver | async" >{{repo.name}}</li>
+</ul>
+    

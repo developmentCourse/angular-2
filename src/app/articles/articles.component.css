@@ -1,0 +1,11 @@
+:host{
+    display: block;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    width: 400px;
+    max-height: 500PX;
+    overflow-y: scroll;
+    margin-right: 2em;
+}

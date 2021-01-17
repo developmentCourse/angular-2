@@ -6,6 +6,9 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "isolatedModules": false,
     "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -14,10 +17,22 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+
+    "jsx": "react",
+    "emitDecoratorMetadata": true,
+    "noLib": false,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "exclude": [
+      "client",
+      "node_modules",
+      "typings/browser",
+      "typings/browser.d.ts"
+    ]
   }
 }
